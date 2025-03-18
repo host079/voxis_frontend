@@ -1,18 +1,17 @@
-import { cookies } from "next/headers"
-import type { RequestCookie } from 'next/dist/compiled/@edge-runtime/cookies'
-import Image from "next/image"
+import { cookies } from "next/headers";
+import Image from "next/image";
 
-import { Mail } from "@/app/transcricao/components/mail"
-import { accounts, mails } from "@/app/transcricao/data"
+import { Mail } from "@/app/transcricao/components/mail";
+import { accounts, mails } from "@/app/transcricao/data";
 
 export default async function MailPage() {
-  const cookieStore = await cookies()
+  const cookieStore = await cookies();
 
-  const layout = cookieStore.get("react-resizable-panels:layout:mail")
-  const collapsed = cookieStore.get("react-resizable-panels:collapsed")
+  const layout = cookieStore.get("react-resizable-panels:layout:mail");
+  const collapsed = cookieStore.get("react-resizable-panels:collapsed");
 
-  const defaultLayout = layout ? JSON.parse(layout.value) : undefined
-  const defaultCollapsed = collapsed ? JSON.parse(collapsed.value) : undefined
+  const defaultLayout = layout ? JSON.parse(layout.value) : undefined;
+  const defaultCollapsed = collapsed ? JSON.parse(collapsed.value) : undefined;
 
   return (
     <>
@@ -42,5 +41,5 @@ export default async function MailPage() {
         />
       </div>
     </>
-  )
+  );
 }
